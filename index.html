@@ -2,105 +2,154 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style.css">    
-    <title>Keven Atef</title>
+    <title>Coming Soon - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-text {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 0.5s forwards;
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .glow-1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .glow-2 {
+            bottom: 20%;
+            right: 15%;
+            animation-delay: 3s;
+            width: 200px;
+            height: 200px;
+        }
+
+        .glow-3 {
+            top: 50%;
+            left: 60%;
+            animation-delay: 1.5s;
+            width: 150px;
+            height: 150px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 4px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .pulse-dot:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .pulse-dot:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translate(20px, -20px) scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <header>
-        <a href="#" class="logo">Keven</a>
-        <nav class="navigation">
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="project-details.html" class="more-details" target="_blank"></a>
-        </nav>
-    </header>
-
-
-    <section class="main">
-        <div>
-            <h2>Hello, I'm Keven<br><span>Freelancer</span></h2>
-            <h3>Front-end Web Developer</h3>
-            <a href="#projects" class="main-btn">View my work</a>
-            <div class="social-icons">
-                  <a href="https://www.linkedin.com/in/keven-atef-578b21365/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/KevenAtef"><i class="fab fa-github"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61553173717886"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="cards" id="services">
-        <h2 class="title">Services</h2>
-        <div class="content">
-            <div class="card">
-                <div class="icon">
-                    <i class="fas fa-edit"></i>
-                </div>
-                <div class="info">
-                    <h3>Front-end Developer</h3>
-                    <p>Bringing ideas to life through clean code and captivating interfaces.</p>
-                </div>
-            </div>
-            
-    </section>
-
-    <section class="projects" id="projects">
-        <h2 class="title">Projects</h2>
-        <div class="content">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="Images/customer.png" />
-                </div>
-                <div class="project-info">
-                    <p class="project-category"></p>
-                    <strong class="project-title">
-                        <span>Customer Site</span>
-                        <a href="project-details.html" class="more-details">More details</a>
-                    </strong>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cards contact" id="contact">
-        <h2 class="title">Let's work together</h2>
-        <div class="content">
-            <div class="card">
-                <div class="icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <div class="info">
-                    <h3>Phone</h3>
-                    <p>+201277324047</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="info">
-                    <h3>Email</h3>
-                    <p>keven.atef27@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="glow-effect glow-1"></div>
+    <div class="glow-effect glow-2"></div>
+    <div class="glow-effect glow-3"></div>
     
-    <footer class="footer">
-        <p class="footer-title">Copyrights @ <span>Keven Atef</span></p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/keven-atef-578b21365/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/KevenAtef"><i class="fab fa-github"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61553173717886"><i class="fab fa-facebook"></i></a>
+    <div class="container">
+        <h1 class="main-text">Stay Tuned</h1>
+        <p class="subtitle">for the new portfolio site</p>
+        <div class="loading-dots">
+            <span class="pulse-dot"></span>
+            <span class="pulse-dot"></span>
+            <span class="pulse-dot"></span>
         </div>
-    </footer>
-
+    </div>
 </body>
 </html>
